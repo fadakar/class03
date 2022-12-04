@@ -14,12 +14,19 @@ class PostSeeder extends Seeder
      */
     public function run()
     {
+        /*
         for ($i = 1; $i < 1000; $i++) {
             $newPost = new Post();
             $newPost->title = 'title ' . $i;
             $newPost->description = 'desc ' . $i;
             $newPost->save();
         }
+
+        */
+
+        Post::factory()
+            ->count(10000)
+            ->create();
 
 
     }

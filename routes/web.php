@@ -33,10 +33,10 @@ Route::get('/raw', function () {
 
 Route::get('/', function () {
 
-    $newPost = new Post();
-    $newPost->title = 'salam';
-    $newPost->description = 'salam desc';
-    $newPost->save();
+    //$newPost = new Post();
+    //$newPost->title = 'salam';
+    //$newPost->description = 'salam desc';
+    //$newPost->save();
 
     // $found = Post::find(5);
     // $found->title = 'updated 5';
@@ -45,7 +45,6 @@ Route::get('/', function () {
     //$found = Post::findOrFail(5);
     // $found->delete();
 
-    $posts = Post::where('id', '<=', 6)
-        ->get();
+    $posts = Post::all();
     return view('post.list', compact('posts'));
 });
